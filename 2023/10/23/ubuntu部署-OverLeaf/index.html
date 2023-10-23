@@ -16,27 +16,28 @@
   <meta name="author" content="Pluto_Lan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="服务器有关知识ubuntu安装分区https:&#x2F;&#x2F;www.cnblogs.com&#x2F;niko-s&#x2F;articles&#x2F;13663334.html 设置从uefi启动，最后安装也是从uefi启动，安装过程可选为无线、图形硬件选择~~~ 这样进去之后就有图形界面了，而不是黑屏还要进tty ubuntu安装之后 关闭图形界面减少显存： 1sudo service gdm stop  给文件夹赋予权限： 1s">
+    <meta name="description" content="ubuntu上部署OverLeaf平台1.准备好docker和 docker-compose 环境123输入命令查看docker的版本docker --versiondocker-compose --version  2.部署overleaf2.1安装overleaf 的开源版本sharedlatex1docker pull sharelatex&#x2F;sharelatex:4.1.1  2.2下载do">
 <meta property="og:type" content="article">
-<meta property="og:title" content="服务器一些命令">
-<meta property="og:url" content="https://czangus.github.io/2023/05/30/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:title" content="ubuntu部署 OverLeaf">
+<meta property="og:url" content="https://czangus.github.io/2023/10/23/ubuntu%E9%83%A8%E7%BD%B2-OverLeaf/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="服务器有关知识ubuntu安装分区https:&#x2F;&#x2F;www.cnblogs.com&#x2F;niko-s&#x2F;articles&#x2F;13663334.html 设置从uefi启动，最后安装也是从uefi启动，安装过程可选为无线、图形硬件选择~~~ 这样进去之后就有图形界面了，而不是黑屏还要进tty ubuntu安装之后 关闭图形界面减少显存： 1sudo service gdm stop  给文件夹赋予权限： 1s">
+<meta property="og:description" content="ubuntu上部署OverLeaf平台1.准备好docker和 docker-compose 环境123输入命令查看docker的版本docker --versiondocker-compose --version  2.部署overleaf2.1安装overleaf 的开源版本sharedlatex1docker pull sharelatex&#x2F;sharelatex:4.1.1  2.2下载do">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://static.wbolt.com/wp-content/uploads/2020/05/ssh-cat.png">
-<meta property="article:published_time" content="2023-05-30T11:16:29.000Z">
-<meta property="article:modified_time" content="2023-06-02T08:45:34.008Z">
+<meta property="og:image" content="https://www.bing.com/images/search?view=detailV2&ccid=oFdDAFeI&id=E53A7F26200805D8AD9E33B1CACA0049EF2FF7F8&thid=OIP.oFdDAFeInI36uPK6gmD29AHaCc&mediaurl=https%3a%2f%2fimages.ctfassets.net%2fnrgyaltdicpt%2f5doLOtX69is0i6WIiY4um%2f6cc9be15c75155e7b93cd4823b742e44%2foverleaf_wide_colour_green_bg.png&exph=1162&expw=3509&q=overleaf&simid=608045070520828123&FORM=IRPRST&ck=515C0F6B829B97B6D7B981A20ADD2901&selectedIndex=1">
+<meta property="article:published_time" content="2023-10-23T12:35:33.000Z">
+<meta property="article:modified_time" content="2023-10-23T12:38:20.109Z">
 <meta property="article:author" content="Pluto_Lan">
-<meta property="article:tag" content="命令">
-<meta property="article:tag" content="系统">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="overleaf">
+<meta property="article:tag" content="latex">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://static.wbolt.com/wp-content/uploads/2020/05/ssh-cat.png">
+<meta name="twitter:image" content="https://www.bing.com/images/search?view=detailV2&ccid=oFdDAFeI&id=E53A7F26200805D8AD9E33B1CACA0049EF2FF7F8&thid=OIP.oFdDAFeInI36uPK6gmD29AHaCc&mediaurl=https%3a%2f%2fimages.ctfassets.net%2fnrgyaltdicpt%2f5doLOtX69is0i6WIiY4um%2f6cc9be15c75155e7b93cd4823b742e44%2foverleaf_wide_colour_green_bg.png&exph=1162&expw=3509&q=overleaf&simid=608045070520828123&FORM=IRPRST&ck=515C0F6B829B97B6D7B981A20ADD2901&selectedIndex=1">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>服务器一些命令 - Hexo</title>
+  <title>ubuntu部署 OverLeaf - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -202,7 +203,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="服务器一些命令"></span>
+            <span id="subtitle" data-typed-text="ubuntu部署 OverLeaf"></span>
           
         </div>
 
@@ -213,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-30 19:16" pubdate>
-          2023年5月30日 晚上
+        <time datetime="2023-10-23 20:35" pubdate>
+          2023年10月23日 晚上
         </time>
       </span>
     
@@ -226,7 +227,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.8k 字
+          2.1k 字
         
       </span>
     
@@ -238,7 +239,7 @@
         
         
           <!-- compatible with older versions-->
-          16 分钟
+          18 分钟
         
       </span>
     
@@ -284,13 +285,13 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">服务器一些命令</h1>
+            <h1 style="display: none">ubuntu部署 OverLeaf</h1>
             
               <p class="note note-info">
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：5 个月前
+                    本文最后更新于：几秒前
                   
                 
               </p>
@@ -298,54 +299,29 @@
             
               <div class="markdown-body">
                 
-                <h1 id="服务器有关知识"><a href="#服务器有关知识" class="headerlink" title="服务器有关知识"></a>服务器有关知识</h1><h2 id="ubuntu安装分区"><a href="#ubuntu安装分区" class="headerlink" title="ubuntu安装分区"></a>ubuntu安装分区</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/niko-s/articles/13663334.html">https://www.cnblogs.com/niko-s/articles/13663334.html</a></p>
-<p>设置从uefi启动，最后安装也是从uefi启动，安装过程可选为无线、图形硬件选择~~~</p>
-<p>这样进去之后就有图形界面了，而不是黑屏还要进tty</p>
-<h2 id="ubuntu安装之后"><a href="#ubuntu安装之后" class="headerlink" title="ubuntu安装之后"></a>ubuntu安装之后</h2><ul>
-<li><p>关闭图形界面减少显存：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo service gdm stop<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>给文件夹赋予权限：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo chown cz.cz -R cz<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>添加sudo用户：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo usermod -aG sudo cz<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>添加新成员： adduser(更友好) useradd(不友好)</p>
-</li>
-<li><p>关闭密码登录：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim /etc/ssh/sshd_config <br></code></pre></td></tr></table></figure>
-</li>
-<li><p>秘钥：[(30条消息) Ubuntu 设置远程密钥登录（VsCode远程密钥登录）_Loasn的博客-CSDN博客_ubuntu 密钥登录](<a target="_blank" rel="noopener" href="https://blog.csdn.net/snfdess/article/details/122870231#:~:text=Ubuntu">https://blog.csdn.net/snfdess/article/details/122870231#:~:text=Ubuntu</a> 设置远程密钥登录（VsCode远程密钥登录） 1 step.1 生成 SSH 密钥 ssh-keygen,将以下两个选项的注释取消，确保其为生效状态 … 4 step.4 vscode 远程插件设置 ssh-key )</p>
-</li>
-</ul>
-<h2 id="Ubuntu服务器无法使用git-clone"><a href="#Ubuntu服务器无法使用git-clone" class="headerlink" title="Ubuntu服务器无法使用git clone"></a>Ubuntu服务器无法使用git clone</h2><p>首先ping <a target="_blank" rel="noopener" href="http://www.github.com/">www.github.com</a></p>
-<p>发现给出的ip ping不通，这时我们需要找到真正对应github.com的ip地址</p>
-<p>查询网站： <a target="_blank" rel="noopener" href="https://ipaddress.com/website/github.com">https://ipaddress.com/website/github.com</a> ，观察可不可以ping通</p>
-<p>之后修改&#x2F;etc&#x2F;hosts文件 主动修改域名github.com对应的ip地址，也就是下面这一行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell">127.0.0.1	localhost<br>127.0.1.1	ecnu-MS-7A93<br><br>---------in vim----------<br>140.82.114.4 github.com<br>-------------------------<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">The following lines are desirable <span class="hljs-keyword">for</span> IPv6 capable hosts</span><br>::1     ip6-localhost ip6-loopback<br>fe00::0 ip6-localnet<br>ff00::0 ip6-mcastprefix<br>ff02::1 ip6-allnodes<br>ff02::2 ip6-allrouters<br></code></pre></td></tr></table></figure>
+                <h1 id="ubuntu上部署OverLeaf平台"><a href="#ubuntu上部署OverLeaf平台" class="headerlink" title="ubuntu上部署OverLeaf平台"></a>ubuntu上部署OverLeaf平台</h1><h2 id="1-准备好docker和-docker-compose-环境"><a href="#1-准备好docker和-docker-compose-环境" class="headerlink" title="1.准备好docker和 docker-compose 环境"></a>1.准备好docker和 docker-compose 环境</h2><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ada">输入命令查看docker的版本<br>docker <span class="hljs-comment">--version</span><br>docker-compose <span class="hljs-comment">--version</span><br></code></pre></td></tr></table></figure>
 
-<p>之后重启网络服务</p>
-<p>​	注意18.04和20.04的网络重启操作可能不同，差别体现在networking上</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo /etc/init.d/networking restart<br></code></pre></td></tr></table></figure>
+<h2 id="2-部署overleaf"><a href="#2-部署overleaf" class="headerlink" title="2.部署overleaf"></a>2.部署overleaf</h2><h3 id="2-1安装overleaf-的开源版本sharedlatex"><a href="#2-1安装overleaf-的开源版本sharedlatex" class="headerlink" title="2.1安装overleaf 的开源版本sharedlatex"></a>2.1安装overleaf 的开源版本sharedlatex</h3><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">docker</span> pull sharelatex/sharelatex:<span class="hljs-number">4</span>.<span class="hljs-number">1</span>.<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
 
-<p>之后就可以使用git clone了</p>
-<h2 id="ubuntu远程复制文件夹"><a href="#ubuntu远程复制文件夹" class="headerlink" title="ubuntu远程复制文件夹"></a>ubuntu远程复制文件夹</h2><p>1.从本地复制到远程<br>在本地服务器上将&#x2F;root&#x2F;k目录下所有的文件传输到服务器41.224.34.73的&#x2F;home&#x2F;Ik&#x2F;cpfile目录下，命令为</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">scp -r /root/lk root@41.224.34.73:/home/lk/cpfile<br></code></pre></td></tr></table></figure>
+<h3 id="2-2下载docker-composed文件"><a href="#2-2下载docker-composed文件" class="headerlink" title="2.2下载docker-composed文件"></a>2.2下载docker-composed文件</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">wget https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/overleaf/</span>overleaf<span class="hljs-regexp">/blob/m</span>ain/docker-compose.yml<br></code></pre></td></tr></table></figure>
 
-<p>2.从远程复制到本地<br>在本地服务器上操作，将服务器41.224.34.73上&#x2F;home&#x2F;k&#x2F;目录下所有的文件全部复制到本地的&#x2F;root目录</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">scp -r root@41.224.34.73:/home/lk /root<br></code></pre></td></tr></table></figure>
+<h3 id="2-3针对4-1-1版本的调整"><a href="#2-3针对4-1-1版本的调整" class="headerlink" title="2.3针对4.1.1版本的调整"></a>2.3针对4.1.1版本的调整</h3><p>如果不做修改，会导致mongo和sharelatex启动不起来，出现以下类似问题：<br>（1）dependency failed to start: container for service “mongo” is unhealthy<br>（2）MongoServerError: Transaction numbers are only allowed on a replica set member or mongos</p>
+<h4 id="2-3-1将image-sharelatex-x2F-sharelatex的版本修改为："><a href="#2-3-1将image-sharelatex-x2F-sharelatex的版本修改为：" class="headerlink" title="2.3.1将image: sharelatex&#x2F;sharelatex的版本修改为："></a>2.3.1将image: sharelatex&#x2F;sharelatex的版本修改为：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs \">image: sharelatex/sharelatex:4.1.1<br></code></pre></td></tr></table></figure>
 
-<h2 id="Ubuntu创建短链接"><a href="#Ubuntu创建短链接" class="headerlink" title="Ubuntu创建短链接"></a>Ubuntu创建短链接</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ln -s /data/SYSU-MM01 /dataset<br></code></pre></td></tr></table></figure>
+<h4 id="2-3-2将mongo部分的配置修改成如下所示："><a href="#2-3-2将mongo部分的配置修改成如下所示：" class="headerlink" title="2.3.2将mongo部分的配置修改成如下所示："></a>2.3.2将mongo部分的配置修改成如下所示：</h4><figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">mongo</span><span class="hljs-punctuation">:</span><br>     <span class="hljs-attribute">restart</span><span class="hljs-punctuation">:</span> <span class="hljs-string">always</span><br>     <span class="hljs-attribute">image</span><span class="hljs-punctuation">:</span> <span class="hljs-string">mongo:4.4</span><br>     <span class="hljs-attribute">container_name</span><span class="hljs-punctuation">:</span> <span class="hljs-string">mongo</span><br>     <span class="hljs-attribute">command</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;--replSet overleaf&quot;</span><br>     <span class="hljs-attribute">expose</span><span class="hljs-punctuation">:</span><br>       <span class="hljs-bullet">-</span> <span class="hljs-string">27017</span><br>     <span class="hljs-attribute">volumes</span><span class="hljs-punctuation">:</span><br>       <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;./mongo_data:/data/db&quot;</span><br>     <span class="hljs-attribute">healthcheck</span><span class="hljs-punctuation">:</span><br>       <span class="hljs-attribute">test</span><span class="hljs-punctuation">:</span> <span class="hljs-string">echo &#x27;db.stats().ok&#x27; | mongo localhost:27017/test --quiet</span><br>       <span class="hljs-attribute">interval</span><span class="hljs-punctuation">:</span> <span class="hljs-string">10s</span><br>       <span class="hljs-attribute">timeout</span><span class="hljs-punctuation">:</span> <span class="hljs-string">10s</span><br>       <span class="hljs-attribute">retries</span><span class="hljs-punctuation">:</span> <span class="hljs-string">5</span><br><br> <span class="hljs-attribute">mongoinit</span><span class="hljs-punctuation">:</span><br>     <span class="hljs-attribute">image</span><span class="hljs-punctuation">:</span> <span class="hljs-string">mongo:4.4</span><br>     <span class="hljs-comment"># this container will exit after executing the command</span><br>     <span class="hljs-attribute">restart</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;no&quot;</span><br>     <span class="hljs-attribute">depends_on</span><span class="hljs-punctuation">:</span><br>       <span class="hljs-attribute">mongo</span><span class="hljs-punctuation">:</span><br>         <span class="hljs-attribute">condition</span><span class="hljs-punctuation">:</span> <span class="hljs-string">service_healthy</span><br>     <span class="hljs-attribute">entrypoint</span><span class="hljs-punctuation">:</span><br>       [<br>         &quot;mongo&quot;,<br>         &quot;--host&quot;,<br>         &quot;mongo:27017&quot;,<br>         <span class="hljs-attribute">&quot;--eval&quot;,</span><br><span class="hljs-attribute">         &#x27;rs.initiate(&#123; _id</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;overleaf&quot;, members: [ &#123; _id: 0, host: &quot;mongo:27017&quot; &#125; ] &#125;)&#x27;,</span><br>       ]<br></code></pre></td></tr></table></figure>
 
-<p>删除软链接，直接删除软链接就行，注意不要删除错了文件夹：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">rm -rf dataset<br></code></pre></td></tr></table></figure>
+<h4 id="2-3-4命令行进入docker-compose-yml-文件所在目录下，然后执行："><a href="#2-3-4命令行进入docker-compose-yml-文件所在目录下，然后执行：" class="headerlink" title="2.3.4命令行进入docker-compose.yml 文件所在目录下，然后执行："></a>2.3.4命令行进入docker-compose.yml 文件所在目录下，然后执行：</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs vim">docker-compose <span class="hljs-keyword">up</span><br>可以使用docker-compose <span class="hljs-keyword">up</span> -d 来后台运行<br></code></pre></td></tr></table></figure>
 
-<h2 id="Ubuntu利用跳板机连接内网服务器"><a href="#Ubuntu利用跳板机连接内网服务器" class="headerlink" title="Ubuntu利用跳板机连接内网服务器"></a>Ubuntu利用跳板机连接内网服务器</h2><p>vscode的连接方法（<a target="_blank" rel="noopener" href="https://blog.csdn.net/huitailangyz/article/details/106392021">(51条消息) vscode通过跳板机连接远程服务器_vscode 堡垒机_huitailangyz的博客-CSDN博客</a>）</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">Host</span> <span class="hljs-string">JumpMachine</span>             <span class="hljs-comment">#跳板机名称</span><br>    <span class="hljs-string">HostName</span> <span class="hljs-string">XXX.XXX.XXX.XXX</span> <span class="hljs-comment">#跳板机IP </span><br>    <span class="hljs-string">Port</span> <span class="hljs-string">XXX</span>                 <span class="hljs-comment">#跳板机ssh端口</span><br>    <span class="hljs-string">User</span> <span class="hljs-string">root</span>                <span class="hljs-comment">#跳板机用户名</span><br><br><span class="hljs-string">Host</span> <span class="hljs-string">TargetMachine</span>           <span class="hljs-comment">#远程服务器名称</span><br>    <span class="hljs-string">HostName</span> <span class="hljs-string">XXX.XXX.XXX.XXX</span> <span class="hljs-comment">#远程服务器IP</span><br>    <span class="hljs-string">Port</span> <span class="hljs-string">XXX</span>                 <span class="hljs-comment">#远程服务器ssh端口</span><br>    <span class="hljs-string">User</span> <span class="hljs-string">root</span>                <span class="hljs-comment">#远程服务器用户名</span><br>    <span class="hljs-string">ProxyCommand</span> <span class="hljs-string">ssh</span> <span class="hljs-string">-W</span> <span class="hljs-string">%h:%p</span> <span class="hljs-string">JumpMachine</span><br></code></pre></td></tr></table></figure>
+<h4 id="2-3-5通过访问-http-yourip-80-launchpad-就可以配置管理员账号"><a href="#2-3-5通过访问-http-yourip-80-launchpad-就可以配置管理员账号" class="headerlink" title="2.3.5通过访问 http://yourip:80/[launchpad 就可以配置管理员账号"></a>2.3.5通过访问 <a target="_blank" rel="noopener" href="http://yourip/[launchpad">http://yourip:80/[launchpad</a> 就可以配置管理员账号</h4><h2 id="3-继续安装"><a href="#3-继续安装" class="headerlink" title="3.继续安装"></a>3.继续安装</h2><p>官方的镜像为了节省带宽，镜像中未含完整版本的TeXLive。需要继续安装完整版本的TeXLive</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs awk">**进入到容器sharelatex的命令行界面：**<br>docker exec -it sharelatex bash <br><br>进入到sharelatex容器的文件夹<br>cd <span class="hljs-regexp">/usr/</span>local/texlive<br><br>下载更新文件<br>wget http:<span class="hljs-regexp">//mi</span>rror.ctan.org<span class="hljs-regexp">/systems/</span>texlive<span class="hljs-regexp">/tlnet/u</span>pdate-tlmgr-latest.sh --no-check-certificate<br><br>执行更新操作<br>sh update-tlmgr-latest.sh -- --upgrade<br><br><br>配置国内源<br>tlmgr option repository https:<span class="hljs-regexp">//mi</span>rrors.tuna.tsinghua.edu.cn<span class="hljs-regexp">/CTAN/</span>systems<span class="hljs-regexp">/texlive/</span>tlnet/<br><br>执行更新操作<br>tlmgr update --self --all <span class="hljs-comment"># luaotfload-tool -fu</span><br><br>执行安装操作<br>tlmgr install scheme-full<br><br></code></pre></td></tr></table></figure>
 
-<p>终端配置：</p>
-<p>​	xshell可以配置local转发，缺点是要一直连接跳板机，mobaxterm更加方便一点</p>
+<h2 id="4-开放端口"><a href="#4-开放端口" class="headerlink" title="4.开放端口"></a>4.开放端口</h2><p>如果遇到端口无法访问的问题，可以使用iptable来配置开放端口(重启之后会失效)</p>
+<figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs tp">iptables -<span class="hljs-keyword">P</span> INPUT <span class="hljs-keyword">ACC</span>EPT<br>iptables -<span class="hljs-keyword">P</span> FORWARD <span class="hljs-keyword">ACC</span>CEPT<br>iptables -<span class="hljs-keyword">P</span> OUTPUT <span class="hljs-keyword">ACC</span>EPT<br>iptables -F<br>iptables --save<br></code></pre></td></tr></table></figure>
+
+<h2 id="5-参考资料"><a href="#5-参考资料" class="headerlink" title="5.参考资料"></a>5.参考资料</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/656444021">保姆教程—在本地部署Overleaf - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://yxnchen.github.io/technique/Docker%E9%83%A8%E7%BD%B2ShareLaTeX%E5%B9%B6%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE%E4%B8%AD%E6%96%87%E7%8E%AF%E5%A2%83/#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">Docker部署ShareLaTeX并简单配置中文环境 | YXN’s Blog (yxnchen.github.io)</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/150827584">Overleaf-在线Latex编辑器部署 - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wangzhaoyoung/article/details/108678355">Ubuntu开启所有端口_王昭阳的博客-CSDN博客</a></p>
 
                 
               </div>
@@ -367,13 +343,6 @@
   <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="category-chain-item">学习</a>
   
   
-    <span>></span>
-    
-  <a href="/categories/%E5%AD%A6%E4%B9%A0/Linux/" class="category-chain-item">Linux</a>
-  
-  
-
-  
 
       </span>
     
@@ -386,9 +355,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%91%BD%E4%BB%A4/">#命令</a>
+        <a href="/tags/ubuntu/">#ubuntu</a>
       
-        <a href="/tags/%E7%B3%BB%E7%BB%9F/">#系统</a>
+        <a href="/tags/overleaf/">#overleaf</a>
+      
+        <a href="/tags/latex/">#latex</a>
       
     </div>
   
@@ -400,8 +371,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>服务器一些命令</div>
-      <div>https://czangus.github.io/2023/05/30/服务器一些命令/</div>
+      <div>ubuntu部署 OverLeaf</div>
+      <div>https://czangus.github.io/2023/10/23/ubuntu部署-OverLeaf/</div>
     </div>
     <div class="license-meta">
       
@@ -413,7 +384,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年5月30日</div>
+          <div>2023年10月23日</div>
         </div>
       
       
@@ -445,18 +416,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/10/23/ubuntu%E9%83%A8%E7%BD%B2-OverLeaf/" title="ubuntu部署 OverLeaf">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ubuntu部署 OverLeaf</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/14/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="hexo博客安装配置">
-                        <span class="hidden-mobile">hexo博客安装配置</span>
+                      <a href="/2023/05/30/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/" title="服务器一些命令">
+                        <span class="hidden-mobile">服务器一些命令</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
